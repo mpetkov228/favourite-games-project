@@ -1,16 +1,17 @@
-import './App.css'
+import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import './App.css'
+import Library from './pages/Library';
 
 function App() {
-  const games = [
-    { url: '', title: 'Far Cry', releaseYear: 2004 },
-    { url: '', title: 'Super Mario', releaseYear: 1985 },
-    { url: '', title: 'Grand Theft Auto III', releaseYear: 2001 }
-  ];
-
   return (
     <>
-      <Home games={games} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/library" element={<Library />} />
+        </Routes>
+      </main>
     </>
   )
 }
