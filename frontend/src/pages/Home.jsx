@@ -1,4 +1,5 @@
-import GameCard from '../components/GameCard'
+import GameCard from '../components/GameCard';
+import '../css/Home.css';
 
 function Home() {
     const games = [
@@ -8,7 +9,7 @@ function Home() {
     ];
 
     return (
-        <div>
+        <div className='games-grid'>
             {games.map(game => <GameCard game={game} />)}
         </div>
     );

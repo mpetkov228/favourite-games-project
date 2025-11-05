@@ -1,3 +1,5 @@
+import '../css/GameCard.css';
+
 function GameCard({ game }) {
 
     function onFavourite() {
@@ -5,14 +7,14 @@ function GameCard({ game }) {
     }
 
     return (
-        <div>
-            <div>
+        <div className='game-card'>
+            <div className='game-cover'>
                 <img src={game.url} alt={game.title} />
-                <div>
-                    <button onClick={onFavourite}>❤︎</button>
+                <div className='game-overlay'>
+                    <button className='add-to-library-btn' onClick={onFavourite}>❤︎</button>
                 </div>
             </div>
-            <div>
+            <div className='game-info'>
                 <h3>{game.title}</h3>
                 <p>{game.releaseYear}</p>
             </div>
