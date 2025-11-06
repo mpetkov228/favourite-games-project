@@ -1,16 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GameCard from '../components/GameCard';
 import '../css/Home.css';
+import { getAll } from '../services/app';
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState('');
+    const [games, setGames] = useState([]);
 
-    const games = [
-        { url: '', title: 'Far Cry', releaseYear: 2004 },
-        { url: '', title: 'Super Mario', releaseYear: 1985 },
-        { url: '', title: 'Grand Theft Auto III', releaseYear: 2001 },
-        { url: '', title: 'Grand Theft Auto III', releaseYear: 2001 },
-    ];
+    useEffect(() => {
+        const loadGames = async () => {
+            try {
+                const allGames = await getAll();
+                setGames(allGames);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        loadGames();
+    }, []);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -32,7 +40,7 @@ function Home() {
             </form>
             <div className='games-grid'>
                 {games.map(
-                    game => game.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && <GameCard game={game} />
+                    game => game.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && <GameCard key={game.id} game={game} />
                 )}
             </div>
         </div>

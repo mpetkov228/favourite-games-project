@@ -9,7 +9,7 @@ function GameCard({ game }) {
     return (
         <div className='game-card'>
             <div className='game-cover'>
-                <img src={game.url} alt={game.title} />
+                <img src={game.thumbnail} alt={game.title} />
                 <div className='game-overlay'>
                     <button className='add-to-library-btn' onClick={onFavourite}>❤︎</button>
                 </div>
