@@ -31,7 +31,9 @@ function Home() {
                 <button type="submit" className="search-button">Search</button>
             </form>
             <div className='games-grid'>
-                {games.map(game => <GameCard game={game} />)}
+                {games.map(
+                    game => game.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && <GameCard game={game} />
+                )}
             </div>
         </div>
     );
