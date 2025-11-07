@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import GameCard from '../components/GameCard';
 import '../css/Home.css';
-import { getAll } from '../services/app';
+import { getAll } from '../services/games';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -40,7 +41,7 @@ function Home() {
             </form>
             <div className='games-grid'>
                 {games.map(
-                    game => game.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && <GameCard key={game.id} game={game} />
+                    game => game.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && <Link key={game.id} to={`/game/${game.id}`}><GameCard game={game} /></Link>
                 )}
             </div>
         </div>

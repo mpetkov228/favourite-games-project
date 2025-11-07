@@ -1,0 +1,31 @@
+.game-page {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail img {
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.additional-info .info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.screenshots {
+    display: flex;
+    gap: 20px;
+}
+
+.screenshots img {
+    max-width: 200px;
+}
+
+.system-requirements {
+    display: flex;
+    gap: 20px;
+}

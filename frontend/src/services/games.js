@@ -1,4 +1,4 @@
-const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+const url = 'https://free-to-play-games-database.p.rapidapi.com/api';
 const options = {
 	method: 'GET',
 	headers: {
@@ -8,7 +8,13 @@ const options = {
 };
 
 export async function getAll() {
-    const res = await fetch(url, options);
+    const res = await fetch(`${url}/games`, options);
     const data = await res.json();
     return data;
+}
+
+export async function getById(id) {
+	const res = await fetch(`${url}/game?id=${id}`, options);
+	const data = await res.json();
+	return data;
 }
