@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getById } from "../services/games";
 import "../css/Game.css";
 import SystemRequirements from "../components/SystemRequirements";
+import AdditionalInfo from "../components/AdditionalInfo";
 
 function Game() {
     const [game, setGame] = useState(null);
@@ -32,32 +33,7 @@ function Game() {
                 <div className="thumbnail">
                     <img src={game.thumbnail} alt={game.title} />
                 </div>
-                <div className="additional-info">
-                    <div className="info-item">
-                        <div>Title</div>
-                        <div>{game.title}</div>
-                    </div>
-                    <div className="info-item">
-                        <div>Release Date</div>
-                        <div>{game.release_date}</div>
-                    </div>
-                    <div className="info-item">
-                        <div>Developer</div>
-                        <div>{game.developer}</div>
-                    </div>
-                    <div className="info-item">
-                        <div>Genre</div>
-                        <div>{game.genre}</div>
-                    </div>
-                    <div className="info-item">
-                        <div>Publisher</div>
-                        <div>{game.publisher}</div>
-                    </div>
-                    <div className="info-item">
-                        <div>Platform</div>
-                        <div>{game.platform}</div>
-                    </div>
-                </div>
+                <AdditionalInfo game={game} />
             </div>
             <div>
                 <h1>{game.title}</h1>
