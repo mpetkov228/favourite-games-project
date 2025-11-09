@@ -29,3 +29,12 @@
     display: flex;
     gap: 20px;
 }
+
+.system-requirements p {
+    margin-bottom: 16px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}

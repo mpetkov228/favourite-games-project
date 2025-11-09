@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getById } from "../services/games";
 import "../css/Game.css";
+import SystemRequirements from "../components/SystemRequirements";
 
 function Game() {
     const [game, setGame] = useState(null);
@@ -69,25 +70,7 @@ function Game() {
                 <p>
                     {game.description}
                 </p>
-                <div>
-                    <h2>Minimum System Requirements ({game.platform})</h2>
-                    <div className="system-requirements">
-                        <div className="left-col">
-                            <span>OS <br /></span>
-                            <p>{game.minimum_system_requirements.os}</p>
-                            <span>Memory <br /></span>
-                            <p>{game.minimum_system_requirements.memory}</p>
-                            <span>Storage <br /></span>
-                            <p>{game.minimum_system_requirements.storage}</p>
-                        </div>
-                        <div className="right-col">
-                            <span>Processor <br /></span>
-                            <p>{game.minimum_system_requirements.processor}</p>
-                            <span>Graphics <br /></span>
-                            <p>{game.minimum_system_requirements.graphics}</p>
-                        </div>
-                    </div>
-                </div>
+                <SystemRequirements game={game} />
             </div>
         </div>
     );
