@@ -10,12 +10,12 @@ function AdditionalInfo({ game }) {
                 <div>{game.release_date}</div>
             </div>
             <div className="info-item">
-                <div>Developer</div>
-                <div>{game.developer}</div>
-            </div>
-            <div className="info-item">
                 <div>Genre</div>
                 <div>{game.genre}</div>
+            </div>
+            <div className="info-item">
+                <div>Developer</div>
+                <div>{game.developer}</div>
             </div>
             <div className="info-item">
                 <div>Publisher</div>

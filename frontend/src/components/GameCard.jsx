@@ -16,7 +16,7 @@ function GameCard({ game }) {
             </div>
             <div className='game-info'>
                 <h3>{game.title}</h3>
-                <p>{game.releaseYear}</p>
+                <p>{game.release_date.split('-')[0]}</p>
             </div>
         </div>
     );
