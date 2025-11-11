@@ -17,11 +17,12 @@ export const LibraryProvider = ({ children }) => {
         localStorage.setItem('library', JSON.stringify(library));
     }, [library]);
 
-    const addToLibrary = ({ game }) => {
+    const addToLibrary = (game) => {
+        console.log(game);
         setLibrary(state => [...state, game]);
     };
 
-    const isInLibrary = ({ gameId }) => {
+    const isInLibrary = (gameId) => {
         return library.some(game => game.id === gameId);
     };
 

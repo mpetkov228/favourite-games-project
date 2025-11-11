@@ -41,7 +41,7 @@ function Home() {
             </form>
             <div className='games-grid'>
                 {games.map(
-                    game => game.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && <Link key={game.id} to={`/game/${game.id}`}><GameCard game={game} /></Link>
+                    game => game.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && <GameCard game={game} key={game.id} />
                 )}
             </div>
         </div>

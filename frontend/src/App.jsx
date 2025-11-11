@@ -4,10 +4,11 @@ import Home from './pages/Home';
 import Library from './pages/Library';
 import NavBar from './components/NavBar';
 import Game from './pages/Game';
+import { LibraryProvider } from './contexts/LibraryContext';
 
 function App() {
   return (
-    <div>
+    <LibraryProvider>
       <NavBar />
       <main className="main-content">
         <Routes>
@@ -16,7 +17,7 @@ function App() {
           <Route path="/game/:id" element={<Game />} />
         </Routes>
       </main>
-    </div>
+    </LibraryProvider>
   )
 }
 
