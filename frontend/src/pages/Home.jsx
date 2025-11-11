@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import GameCard from '../components/GameCard';
 import '../css/Home.css';
 import { getAll } from '../services/games';
-import { Link } from 'react-router-dom';
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState('');

@@ -29,7 +29,7 @@ export const LibraryProvider = ({ children }) => {
     const value = {
         library,
         addToLibrary,
-        isInLibrary
+        isInLibrary,
     };
 
     return (
