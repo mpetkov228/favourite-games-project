@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const User = require('../models/User');
 
@@ -28,6 +29,8 @@ async function login(req, res) {
     if (!passwordMatch) {
         return res.status(401).json({ message: 'Incorrect email or password!' });
     }
+
+    // jwt.sign({ useruser.username });
 
     return res.status(200).json({ message: 'login successful' });
 }
