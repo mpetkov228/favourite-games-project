@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+
 const User = require('../models/User');
 
 async function register(req, res) {
@@ -15,6 +16,23 @@ async function register(req, res) {
     }
 }
 
+async function login(req, res) {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+        return res.status(401).json({ message: 'Incorrect email or password!' });
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+        return res.status(401).json({ message: 'Incorrect email or password!' });
+    }
+
+    return res.status(200).json({ message: 'login successful' });
+}
+
 module.exports = {
-    register
+    register,
+    login
 };
